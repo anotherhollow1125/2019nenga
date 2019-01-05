@@ -93,28 +93,30 @@
     <h1 class="akeome">今年もよろしくお願いします。</h1>
     <h1 class="akeome">m(_ _)m</h1>
     <script>
-    document.getElementById("omikuji").innerHTML = [
-        "<span class='result'>大吉</span><br /><span>突き進め！！</span>",
-        "<span class='result'>大吉</span><br /><span>猪突猛進！！</span>",
-        "<span class='result'>大吉</span><br /><span>順風満帆！！</span>",
-        "<span class='result'>大吉</span><br /><span>やったね！！</span>",
-        "<span class='result'>中吉</span><br /><span>健康第一！</span>",
-        "<span class='result'>中吉</span><br /><span>油断禁物！</span>",
-        "<span class='result'>中吉</span><br /><span>前向きに行こう！</span>",
-        "<span class='result'>小吉</span><br /><span>小さな幸せを大事に</span>"
-    ][parseInt(Math.floor( Math.random() * 8 ))];
-    
-    document.querySelector("div#inoshishi img").addEventListener("click", function(e){
-        document.querySelector("div#inoshishi img").style.animationPlayState = "running";
-        document.getElementById("inoshishi").classList.remove("click-content");
-        document.getElementById("omikuji").style.display = "block";        
-        setTimeout(function(){
-            document.getElementById("omikuji").classList.add("omikuji-open");
-            document.querySelectorAll(".akeome").forEach(function(e){
-                // e.style.opacity = 1.0;
-                e.classList.add("omikuji-open");
-            });
-        }, 1000);
+    addEventListener("load", function(){
+        document.getElementById("omikuji").innerHTML = [
+            "<span class='result'>大吉</span><br /><span>突き進め！！</span>",
+            "<span class='result'>大吉</span><br /><span>猪突猛進！！</span>",
+            "<span class='result'>大吉</span><br /><span>順風満帆！！</span>",
+            "<span class='result'>大吉</span><br /><span>やったね！！</span>",
+            "<span class='result'>中吉</span><br /><span>健康第一！</span>",
+            "<span class='result'>中吉</span><br /><span>油断禁物！</span>",
+            "<span class='result'>中吉</span><br /><span>前向きに行こう！</span>",
+            "<span class='result'>小吉</span><br /><span>小さな幸せを大事に</span>"
+        ][parseInt(Math.floor( Math.random() * 8 ))];
+        
+        document.querySelector("div#inoshishi img").addEventListener("click", function(e){
+            document.querySelector("div#inoshishi img").style.animationPlayState = "running";
+            document.getElementById("inoshishi").classList.remove("click-content");
+            document.getElementById("omikuji").style.display = "block";        
+            setTimeout(function(){
+                document.getElementById("omikuji").classList.add("omikuji-open");
+                document.querySelectorAll(".akeome").forEach(function(e){
+                    // e.style.opacity = 1.0;
+                    e.classList.add("omikuji-open");
+                });
+            }, 1000);
+        }, false);
     }, false);
     </script>
 </body>
